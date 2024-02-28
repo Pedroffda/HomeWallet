@@ -4,11 +4,15 @@
 
 <details>
  <summary>Diagrama de Casos de Uso</summary>
+ 
 ![use_cases](https://github.com/Pedroffda/HomeWallet/assets/92474347/e5fb6e4a-0cc6-4966-9b7a-aafda436cd59)
+
 </details>
 <details>
  <summary>Diagrama de Classes</summary>
+ 
 ![class_diagram](https://github.com/Pedroffda/HomeWallet/assets/92474347/1e67dd6c-c3d7-415b-91c0-80ac48c8e049)
+
 </details>
 
 ## Principais Funcionalidades:
