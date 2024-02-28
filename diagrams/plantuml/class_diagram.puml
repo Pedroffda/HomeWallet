@@ -1,0 +1,50 @@
+@startuml
+
+class Usuario {
+    - id: int
+    - nome: string
+    - email: string
+    - senha: string
+}
+
+class Despesa {
+    - id: int
+    - descricao: string
+    - valor: double
+    - data: Date
+}
+
+class Categoria {
+    - id: int
+    - nome: string
+}
+
+class Pagamento {
+    - id: int
+    - usuario_id: int
+    - despesa_id: int
+    - valor_pago: double
+    - data_pagamento: Date
+}
+
+class SistemaGerenciamentoFinanceiro {
+    + registrarDespesa(descricao: string, valor: double, data: Date): Despesa
+    + categorizarDespesa(despesa_id: int, categoria_id: int): void
+    + atribuirPagamento(usuario_id: int, despesa_id: int, valor_pago: double, data_pagamento: Date): Pagamento
+    + gerarRelatorio(desde: Date, ate: Date): Relatorio
+}
+
+class Relatorio {
+    - despesas: List<Despesa>
+    - pagamentos: List<Pagamento>
+    + calcularTotalDespesas(): double
+    + calcularTotalPagamentos(): double
+}
+
+Usuario "1" -- "*" Despesa
+Despesa "1" -- "1" Categoria : tem
+Despesa "0..1" -- "0..*" Pagamento : pode ser pago por
+Usuario "1" -- "*" Pagamento : faz
+SistemaGerenciamentoFinanceiro "1" -- "*" Usuario : usa
+
+@enduml

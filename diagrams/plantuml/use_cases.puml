@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Usuário as User
+rectangle "Sistema de Gerenciamento Financeiro Doméstico" {
+    User --> (Registrar Despesa)
+    User --> (Categorizar Despesa)
+    User --> (Gerenciar Pagamentos)
+    User --> (Visão Geral)
+    User --> (Gerar Relatórios)
+
+    (Categorizar Despesa) --> (Adicionar Categoria)
+    (Gerenciar Pagamentos) --> (Atribuir Pagamento)
+
+}
+@enduml
